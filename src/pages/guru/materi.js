@@ -191,12 +191,13 @@ const MateriGuru = () => {
       case "image":
         return (
           <div {...attributes} contentEditable={false}>
-            <img
+            <Image
               src={element.url}
-              className="max-w-full h-auto"
               alt="Gambar materi"
+              width={800}
+              height={600}
+              className="max-w-full h-auto"
             />
-            {children}
           </div>
         );
       case "video":

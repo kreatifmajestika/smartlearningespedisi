@@ -1,4 +1,5 @@
 // src/components/Student/Renderers.js
+import Image from "next/image";
 
 export const renderElement = ({ element, attributes, children }) => {
   const style = { textAlign: element.align || "left" };
@@ -46,13 +47,14 @@ export const renderElement = ({ element, attributes, children }) => {
       );
     case "image":
       return (
-        <div {...attributes} contentEditable={false} className="my-4">
-          <img
+        <div {...attributes} contentEditable={false}>
+          <Image
             src={element.url}
-            alt=""
-            className="max-w-full h-auto rounded-lg shadow-sm"
+            alt="Gambar materi"
+            width={800}
+            height={600}
+            className="max-w-full h-auto"
           />
-          {children}
         </div>
       );
     case "video":

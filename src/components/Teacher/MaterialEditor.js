@@ -6,6 +6,7 @@ import { withHistory } from "slate-history";
 import Toolbar from "./Toolbar";
 import { withImages, withEmbeds } from "./plugins";
 import FileUploader from "../Shared/J5FileUploader";
+import Image from "next/image";
 
 const initialValue = [
   {
@@ -138,11 +139,14 @@ const DefaultElement = ({ attributes, children }) => (
 );
 
 const ImageElement = ({ attributes, children, element }) => (
-  <div {...attributes}>
-    <div contentEditable={false}>
-      <img src={element.url} alt={element.alt} className="max-w-full" />
-    </div>
-    {children}
+  <div {...attributes} contentEditable={false}>
+    <Image
+      src={element.url}
+      alt="Gambar materi"
+      width={800}
+      height={600}
+      className="max-w-full h-auto"
+    />
   </div>
 );
 
