@@ -4,7 +4,7 @@ import { useParams, useRouter } from "next/navigation";
 import { database } from "@/lib/firebase";
 import { ref, get } from "firebase/database";
 import { renderElement, renderLeaf } from "@/components/Student/MateriRenderer";
-import { Slate, withReact } from "slate-react";
+import { Editable, Slate, withReact } from "slate-react";
 import { createEditor } from "slate";
 import { withHistory } from "slate-history";
 
